@@ -23,6 +23,8 @@ class LogoutApiTest extends TestCase
         $this->user = factory(User::class)->create();
     }
 
+    /** @test */
+
     public function should_認証済みのユーザーをログアウトさせる(){
         $response = $this->actingAs($this->user)->json('POST', route('logout'));
 
