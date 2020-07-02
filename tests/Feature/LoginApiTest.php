@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -13,10 +14,27 @@ class LoginApiTest extends TestCase
      *
      * @return void
      */
-    public function testExample()
-    {
-        $response = $this->get('/');
 
-        $response->assertStatus(200);
-    }
+     use RefreshDatabase;
+
+     public function setUp(): void{
+         parent::setUp();
+
+         $this->user = factory(User::class)->create();
+     }
+
+     public function should_登録ユーザーを認証(){
+         $response = $this->json('POST', route('login'),[
+             'email'=>$this->user->mail,
+             'password'=> 'password',
+
+         ]);
+
+         $response
+            ->assertStatus(200)
+            ->assertJson(['name'=>$this->user->name]);
+
+        $this->assertAuthenticatedAs($this->user);
+     }
+
 }
