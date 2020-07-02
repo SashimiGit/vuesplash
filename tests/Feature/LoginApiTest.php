@@ -23,9 +23,11 @@ class LoginApiTest extends TestCase
          $this->user = factory(User::class)->create();
      }
 
+     /** @test */
+
      public function should_登録ユーザーを認証(){
          $response = $this->json('POST', route('login'),[
-             'email'=>$this->user->mail,
+             'email'=>$this->user->email,
              'password'=> 'password',
 
          ]);

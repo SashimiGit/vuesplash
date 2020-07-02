@@ -22,6 +22,8 @@ class RegisterApiTest extends TestCase
         $response->assertStatus(200);
     }
 
+    /** @test */
+
     public function should_新しいユーザーを作成(){
         $data = [
             'name' => 'vuesplash user',
