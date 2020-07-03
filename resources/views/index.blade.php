@@ -17,6 +17,6 @@
 </head>
 <body>
   <div id="app"></div>
-  <h1>インデックスですよーーー</h1>
+
 </body>
 </html>
