@@ -55699,7 +55699,7 @@ var actions = {
 
             case 2:
               response = _context.sent;
-              context.commit('setUser', reponse.data);
+              context.commit('setUser', response.data);
 
             case 4:
             case "end":
@@ -55770,7 +55770,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 /**
  * クッキーの値を取得
- * @param{String} searchKey 検索するキー
+ * @param {String} searchKey 検索するキー
  * @returns {String}キーに対応する値
  */
 function getCookieValue(searchKey) {

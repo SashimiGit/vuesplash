@@ -15,7 +15,7 @@ const mutations = {
 const actions = {
   async register (context, data){
     const response = await axios.post('/api/register',data)
-    context.commit('setUser', reponse.data)
+    context.commit('setUser', response.data)
   }
 }
 

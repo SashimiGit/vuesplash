@@ -1,6 +1,6 @@
 /**
  * クッキーの値を取得
- * @param{String} searchKey 検索するキー
+ * @param {String} searchKey 検索するキー
  * @returns {String}キーに対応する値
  */
 
