@@ -2039,6 +2039,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _this.$store.dispatch('auth/register', _this.registerForm);
 
               case 2:
+                // トップページに移動する
                 _this.$router.push('/');
 
               case 3:

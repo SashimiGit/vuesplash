@@ -13,18 +13,18 @@
       >Register</li>
     </ul>
     <div class="panel" v-show="tab === 1">
-    <form class="form" @submit.prevent="login">
+  <form class="form" @submit.prevent="login">
     <label for="login-email">Email</label>
     <input type="text" class="form__item" id="login-email" v-model="loginForm.email">
     <label for="login-password">Password</label>
     <input type="password" class="form__item" id="login-password" v-model="loginForm.password">
     <div class="form__button">
-    <button type="submit" class="button button--inverse">login</button>
+      <button type="submit" class="button button--inverse">login</button>
     </div>
   </form>
 </div>
-    <div class="panel" v-show="tab === 2">
-    <form class="form" @submit.prevent="register">
+<div class="panel" v-show="tab === 2">
+  <form class="form" @submit.prevent="register">
     <label for="username">Name</label>
     <input type="text" class="form__item" id="username" v-model="registerForm.name">
     <label for="email">Email</label>
@@ -36,9 +36,9 @@
     <div class="form__button">
       <button type="submit" class="button button--inverse">register</button>
     </div>
-  </form>       
-    </div>
-  </div>
+  </form>
+</div>
+</div>
 </template>
 
 <script>
@@ -50,11 +50,11 @@ export default {
         email: '',
         password: ''
       },
-      registerForm:{
+      registerForm: {
         name: '',
         email: '',
         password: '',
-        password_confirmation:''
+        password_confirmation: ''
       }
     }
   },
@@ -62,11 +62,13 @@ export default {
     login () {
       console.log(this.loginForm)
     },
-    async register(){
-      await this.$store.dispatch('auth/register', this.registerForm)
+    async register () {
+  // authストアのresigterアクションを呼び出す
+     await this.$store.dispatch('auth/register', this.registerForm)
 
-      this.$router.push('/')
-    }
+  // トップページに移動する
+     this.$router.push('/')
+     }
   }
 }
 </script>
