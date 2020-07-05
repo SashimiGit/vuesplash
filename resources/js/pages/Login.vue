@@ -19,10 +19,10 @@
     <label for="login-password">Password</label>
     <input type="password" class="form__item" id="login-password" v-model="loginForm.password">
     <div class="form__button">
-    <button type="submit" class="button button--inverse">login</button>
+      <button type="submit" class="button button--inverse">login</button>
     </div>
   </form>
-</div>
+  </div>
     <div class="panel" v-show="tab === 2">
     <form class="form" @submit.prevent="register">
     <label for="username">Name</label>
@@ -36,8 +36,8 @@
     <div class="form__button">
       <button type="submit" class="button button--inverse">register</button>
     </div>
-  </form>       
-    </div>
+  </form>   
+  </div>
   </div>
 </template>
 
@@ -50,11 +50,11 @@ export default {
         email: '',
         password: ''
       },
-      registerForm:{
+      registerForm: {
         name: '',
         email: '',
         password: '',
-        password_confirmation:''
+        password_confirmation: ''
       }
     }
   },
@@ -62,7 +62,7 @@ export default {
     login () {
       console.log(this.loginForm)
     },
-    register(){
+    register () {
       console.log(this.registerForm)
     }
   }

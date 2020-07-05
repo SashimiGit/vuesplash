@@ -39,17 +39,17 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    protected function authenticated(\Illuminate\Http\Request $request, $user)
+    // ★ メソッド追加
+    protected function authenticated(Request $request, $user)
     {
         return $user;
-        
     }
 
-    protected function loggedOut(Request $request){
+    protected function loggedOut(Request $request)
+    {
+    // セッションを再生成する
+    $request->session()->regenerate();
 
-        $request->session()->regenerate();
-
-        return response()->json();
-
+    return response()->json();
     }
 }
